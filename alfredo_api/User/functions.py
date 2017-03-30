@@ -11,7 +11,7 @@ HOTEL_SEARCH_API_URL = 'https://api.sandbox.amadeus.com/v1.2/hotels/search-circl
 CAR_SEARCH_API_URL = 'https://api.sandbox.amadeus.com/v1.2/cars/search-circle?'
 CITY_CONV_API_URL = 'https://api.sandbox.amadeus.com/v1.2/airports/autocomplete'
 CITY_IATA_CONV_API = 'https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?'
-DATE_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S+%f'
+DATE_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S'
 DATE_FORMAT = '%Y-%m-%d'
 
 # help functions
@@ -226,6 +226,13 @@ def do_magic (req_type, origin, dest, arrive_by, rating):
 
     # here we have the city data
     city = get_amadeus_flight_data(city_data_url)
+
+    print(rating)
+    print(dest)
+    print(origin)
+    print(arrive_by)
+    print(city['current_city']['location']['latitude'])
+    print(city['current_city']['location']['longitude'])
 
     result = get_trip(3, rating,dest,origin,arrive_by, city['current_city']['location']['latitude'], city['current_city']['location']['longitude'])
 
