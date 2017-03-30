@@ -237,3 +237,8 @@ def do_magic (req_type, origin, dest, arrive_by, rating):
     pass
   else:
     return 'ERROR - NO REQ TYPE'
+
+def do_magic_for_ui(date, star_count, flights_check, hotel_check,
+                                    transportation_check, destination_address,
+                                    origin_address):
+  pass
