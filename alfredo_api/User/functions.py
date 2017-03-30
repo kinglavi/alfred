@@ -241,4 +241,12 @@ def do_magic (req_type, origin, dest, arrive_by, rating):
 def do_magic_for_ui(date, star_count, flights_check, hotel_check,
                                     transportation_check, destination_address,
                                     origin_address):
-  pass
+  result ={}
+
+  if flights_check == true:
+    result['flights'] = do_magic(1,origin_address,destination_address, date, star_count)
+
+  if hotel_check == true:
+    result['hotels'] = do_magic(3, origin_address, destination_address, date, star_count)
+
+  return result
