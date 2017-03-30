@@ -34,18 +34,14 @@ def create_trip_option_view(request):
                                     origin_address))
 
 
-# def do_magic (req_type, origin, dest, arrive_by, rating):
-
-
-
 @api_view(['POST'])
 def create_auth(request):
-    serialized = UserSerializer(data=request.DATA)
+    serialized = UserSerializer(data=request.data)
     if serialized.is_valid():
         User.objects.create_user(
-            serialized.init_data['email'],
-            serialized.init_data['username'],
-            serialized.init_data['password']
+            serialized.initial_data['email'],
+            serialized.initial_data['username'],
+            serialized.initial_data['password']
         )
         return Response(serialized.data, status=HTTP_201_CREATED)
     else:
