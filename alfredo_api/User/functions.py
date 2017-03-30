@@ -247,10 +247,10 @@ def do_magic_for_ui(date, star_count, flights_check, hotel_check,
   dest_city = destination_address.split(',')
   origin_city = origin_address.split(',')
 
-  if flights_check == true:
+  if flights_check:
     result['flights'] = do_magic(1,origin_city[0],dest_city[0], date, star_count)
 
-  if hotel_check == true:
-    result['hotels'] = do_magic(3, origin_address, destination_address, date, star_count)
+  if hotel_check:
+    result['hotels'] = do_magic(3, origin_city[0],dest_city[0], date, star_count)
 
   return result
