@@ -37,7 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allaccess',
+    'rest_framework',
+    'alfredo_api.apps.AlfredoApiConfig'
+    # 'alfredo_api'
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Default backend
+    'django.contrib.auth.backends.ModelBackend',
+    # Additional backend
+    'allaccess.backends.AuthorizedServiceBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
