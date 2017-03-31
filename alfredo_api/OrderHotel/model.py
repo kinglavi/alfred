@@ -16,7 +16,7 @@ class OrderHotel(models.Model):
     address = models.CharField(max_length=500)
     phone = models.CharField(max_length=500)
     room_type = models.CharField(max_length=500)
-    price = models.IntegerField()
+    price = models.CharField(max_length=500)
 
     # def get_hotel_details(self):
     #     # TODO: request get hotel details from hotel_id
