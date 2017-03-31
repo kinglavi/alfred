@@ -18,11 +18,11 @@ class TripView(viewsets.ModelViewSet):
 
 
 @api_view(['GET'])
-def get_trip_by_user(request, username):
-    pass
+def get_trip_by_user(request):
     # if is_authenticated(user_id):
     # Trip.objects.filter(user=)
     # if request.user is not None:
+    username = request.query_params.get('username')
     return Response(get_all_trips_by_user(username))
     # else:
     #     return Response("User must be logged in.", 403)

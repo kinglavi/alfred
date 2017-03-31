@@ -8,5 +8,5 @@ class OrderHotelSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderHotel
         fields = ('check_in', 'check_out', 'booking_code',
-                  'room_type_code', 'rate_plan_code', 'room_descriptions'
+                  'room_type_code', 'rate_plan_code', 'room_descriptions',
                   'address', 'phone', 'room_type', 'price')

@@ -273,7 +273,7 @@ def do_magic_for_ui(date, star_count, flights_check, hotel_check,
     if hotel_check:
         result['hotels'] = do_magic(3, origin_city[0], dest_city[0], date, star_count)
     try:
-        u=User(username="lssddsa",password="fgfsdgf")
+        u=User(username="joe",password="fgfsdgf")
         u.save()
         t = Trip(user=u, arrival_time=datetime.strptime(date, DATE_TIME_FORMAT) - timedelta(days=1),
                  return_time=datetime.strptime(date, DATE_TIME_FORMAT), address=destination_address)
